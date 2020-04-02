@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>리스트를 이용한 메뉴 만들기</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font-family: '맑은 고딕' 돋움;
+	font-size: 0.75em;
+	color: #333
+}
+
+ul, ol {
+	list-style: none;
+}
+
+.tab-box {
+	width: 520px;
+	margin: 50px auto 0;
+}
+
+.tab-box ul {
+	height: 24px;
+}
+
+.tab-box ul li {
+	float: right;
+	width: 100px;
+	height: 22px;
+	border: 1px solid #999;
+	border-radius: 10px 10px 0 0;
+	background-color: #ccc;
+	text-align: center;
+	margin-right: 2px;
+}
+
+.tab-box ul .selected {
+	background-color: #FFCC66;
+	cursor: default;
+}
+
+.tab-box ul li {
+	cursor: pointer;
+}
+
+.tab-box div {
+	width: 516px;
+	border: 1px solid #999;
+	margin-top: -1px;
+	text-align: center;
+	line-height: 200px;
+}
+</style>
+<script type="text/javascript">
+	//DOM Level 2 Event 처리 : 특정 Element의 Event의 Listener를 등록 하는 방식 
+	//특정 이벤트 핸들러(Listener)를 여러개 등록할 수 있다.
+
+	var onTabClicked = function() {
+		//unselect
+		var liSelecteds = document.getElementsByClassName('selected');
+
+		// 		(liSelecteds.length ==1)&& (liSelecteds[0].className='');
+		if (liSelecteds.length == 1) {
+			liSelecteds[0].className = '';
+		}
+		// seclect
+		this.className = 'selected';
+
+	}
+
+	window.addEventListener('load', function() {
+		// div: class='tab-box'
+		var divTabBox = document.getElementsByClassName('tab-box')[0];
+		var ulTabBox = divTabBox.childNodes[1];
+		var liTabBox = ulTabBox.getElementsByTagName('li');
+
+		for (var i = 0; i < liTabBox.length; i++) {
+			liTabBox[i].addEventListener('click', onTabClicked);
+			liTabBox[i].addEventListener('click', function() {
+				console.log(this.innerText);
+			});
+		}
+	});
+
+	window.addEventListener('load', function() {
+		console.log('dom loaded!!');
+	});
+</script>
+</head>
+<body>
+	<div class="tab-box">
+		<ul>
+			<li>메뉴 5</li>
+			<li>메뉴 4</li>
+			<li>메뉴 3</li>
+			<li>메뉴 2</li>
+			<li>메뉴 1</li>
+		</ul>
+		<div>탭뷰입니다.</div>
+	</div>
+</body>
+</html>
