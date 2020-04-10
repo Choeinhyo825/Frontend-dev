@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery/jquery-3.4.1.js"></script>
+<script>
+	$(function() {
+		setTimeout(function() {
+			$('#p1').replaceWith('<h1>변경후</h1>');
+		}, 1000);
+	});
+</script>
+</head>
+<body>
+	<p id="p1">변경전</p>
+</body>
+</html>

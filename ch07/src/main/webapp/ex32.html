@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery/jquery-3.4.1.js"></script>
+<script>
+	$(function() {
+		setTimeout(function() {
+// 			$('h1 a').attr('href', 'http://www.douzone.com');
+// 			$('h1 a').attr('target', '_blnk');
+// 			$('h1 a').attr('title', '우리회사 홈페이지 가기');
+// 			$('h1 a').css('fontSize', '0.75em');
+			
+			$('h1 a').attr({
+				'href': 'http://www.douzone.com',
+				'target': '_blnk',
+				'title': '우리회사 홈페이지 가기'
+			})
+			.css({
+				'fontSize': '0.75em'	
+			});
+		}, 1000);
+	});
+</script>
+</head>
+<body>
+	<h1>
+		<a> 홈페이지가기</a>
+	</h1>
+</body>
+</html>

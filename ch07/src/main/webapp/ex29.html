@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery/jquery-3.4.1.js"></script>
+<script>
+	$(function() {
+		setTimeout(function() {
+			$('#s1, #p1').wrapAll('<div>').parent().css("border",'1px solid lightgray');
+		}, 1000);
+	});
+</script>
+</head>
+<body>
+	<strong id='s1'>타이틀입니다.</strong>
+	<p id="p1">내용입니다.</p>
+
+</body>
+</html>
