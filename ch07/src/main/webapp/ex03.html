@@ -3,15 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript">
-//css 선택자 jQuery 라이브러리
+// 간단 jQuery 만들어 보기
 var jQuery = function(selector) {
 	var elements = document.querySelectorAll(selector);
 	return new _jQuery(elements);
 }
 
 var _jQuery = function(elements){
-	console.log(this);
-	console.log(elements);
 	this.length = elements.length;
 	for(var i = 0; i < elements.length; i++){
 		this["" + i] = elements[i];
@@ -42,7 +40,7 @@ window.addEventListener('load', function(){
 	$obj.css("color", "red");
 	$obj.click(function(){
 		console.log("clicked:" + this);
-		$obj.css("text-decoration", "underline");
+		$(this).css("text-decoration", "underline");
 	})
 })
 
@@ -55,4 +53,4 @@ window.addEventListener('load', function(){
 	<p class="par">문장3</p>
 	<p>문장4</p>
 </body>
-</html> 
+</html>
