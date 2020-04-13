@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery/jquery-3.4.1.js"></script>
+<script>
+	$(function() {
+		$('button').click(function() {
+			$.ajax({
+				url : "http://127.0.0.1:8088/ch07/data.xml",
+				type :'get',
+				// contentType : 'application/json', // GET방식에 사용
+				dataType : "xml",
+				success : function(data) {
+					$('item', data).each(function() {
+						var html = "";
+						html += ('<dt>'+$('title',this).text()+'</dt><dd>'+$('description',this).text()+'</dd>');
+						$('dl').append(html);
+					});
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<button>XML 가져오기</button>
+	<dl>
+	</dl>
+</body>
+</html>

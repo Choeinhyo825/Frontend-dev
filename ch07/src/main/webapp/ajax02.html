@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery/jquery-3.4.1.js"></script>
+<script>
+	$(function() {
+		$('button').click(function() {
+			$('p').load('http://127.0.0.1:8088/ch07/data.html p');
+		});
+	});
+</script>
+</head>
+<body>
+	<button>변경</button>
+	<div>
+		<p>변경전</p>
+	</div>
+</body>
+</html>
